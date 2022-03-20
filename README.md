@@ -32,7 +32,7 @@ func main() {
 		lazy.FromSlice(xs),
 		lazy.TryMap(strconv.Atoi),
 		lazy.IgnoreErr[int](),
-		lazy.Sum,
+		lazy.Sum(),
 	)
 
     fmt.Println(y) // 5
