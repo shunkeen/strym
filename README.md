@@ -1,30 +1,30 @@
 strym
 =====
-​
+
 Strym is a lazy stream library for Go.
-​
+
 * Go 1.18+ Generics
 * Lazy Stream
 * with Error Stream
 
-​
+
 ## Install
 ```
 go get github.com/shunkeen/strym
 ```
 
-​
+
 ## Usage
 ```go
 package main
-​
+
 import (
     "fmt"
     "strconv"
-​
+
     "github.com/shunkeen/strym/lazy"
 )
-​
+
 func main() {
 	xs := []string{"2", "a", "3", "b"}
 
@@ -34,11 +34,11 @@ func main() {
 		lazy.IgnoreErr[int](),
 		lazy.Sum,
 	)
-​
+
     fmt.Println(y) // 5
 }
 ```
-​
+
 
 ## Spec
 
@@ -106,7 +106,7 @@ func main() {
 
 
 ## Examples
-​
+
 ### Producer
 
 #### FromSlice
@@ -224,7 +224,7 @@ zs, _ := lazy.Run2(
 ```
 
 #### ZipWith
-​
+
 ```go
 xs, _ := lazy.Run2(
     lazy.ZipWith(
