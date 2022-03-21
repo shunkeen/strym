@@ -19,10 +19,10 @@ go get github.com/shunkeen/strym
 package main
 
 import (
-    "fmt"
-    "strconv"
+	"fmt"
+	"strconv"
 
-    "github.com/shunkeen/strym/lazy"
+	"github.com/shunkeen/strym/lazy"
 )
 
 func main() {
@@ -35,7 +35,7 @@ func main() {
 		lazy.Sum(),
 	)
 
-    fmt.Println(y) // 5
+	fmt.Println(y) // 5
 }
 ```
 
@@ -690,18 +690,18 @@ x, _ := lazy.Run2(
 
 #### SparkWith
 ```go
-	x, _ := lazy.Run2(
-		lazy.FromSlice([]int{1, 2, 3, 4}),
-		lazy.SparkWith(
-			lazy.Sum(),
-			lazy.Count[int](),
-			func(sum, count int) float64 {
-				return float64(sum) / float64(count)
-			},
-		),
-	)
-	// 2.5
-	assert.Equal(t, 2.5, x)
+x, _ := lazy.Run2(
+    lazy.FromSlice([]int{1, 2, 3, 4}),
+    lazy.SparkWith(
+        lazy.Sum(),
+        lazy.Count[int](),
+        func(sum, count int) float64 {
+            return float64(sum) / float64(count)
+        },
+    ),
+)
+// 2.5
+assert.Equal(t, 2.5, x)
 ```
 
 #### Spark
@@ -727,7 +727,7 @@ x, y := tuple()
 ```go
 h := lazy.ChainPD(
     lazy.FromSlice([]int{0, 1, 2, 3, 4}),
-    lazy.Sum,
+    lazy.Sum(),
 )
 
 x, _ := lazy.Run1(h)
@@ -737,7 +737,7 @@ x, _ := lazy.Run1(h)
 ```go
 x, _ := lazy.Run2(
     lazy.FromSlice([]int{0, 1, 2, 3, 4}),
-    lazy.Sum,
+    lazy.Sum(),
 )
 // 10
 ```
