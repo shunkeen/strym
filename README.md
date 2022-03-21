@@ -11,6 +11,7 @@ Strym is a lazy stream library for Go.
 ## Install
 ```
 go get github.com/shunkeen/strym
+go mod tidy
 ```
 
 
